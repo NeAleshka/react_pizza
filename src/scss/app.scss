@@ -1,7 +1,7 @@
 @import "fonts";
 @import "variables";
 @import "libs/normalize";
-@import "components/all";
+@import "src/components/all";
 body {
     background-color: $background;
 }
@@ -207,7 +207,7 @@ body {
                 span {
                     color: darken($color: $gray-line, $amount: 20);
                     font-weight: 500;
-                    font-weight: 600;
+
                 }
                 &:hover {
                     background-color: darken($color: $gray-line, $amount: 90);
@@ -245,10 +245,6 @@ body {
             line-height: 145.4%;
             letter-spacing: 0.01em;
             color: #777777;
-        }
-        icon {
-            position: relative;
-            top: 2px;
         }
         img {
             display: block;
