@@ -1,22 +1,25 @@
 import logo from "../assets/img/pizza-logo.svg"
 import Button from "./Button";
+import {NavLink, useLocation} from "react-router-dom";
 
  function Header() {
-   const onClickBasketBt = () => {
-  }
-  return (
+
+   let location = useLocation()
+   // console.log(location)
+
+   return (
     <div class='header'>
       <div class='container'>
         <div class='header__logo'>
-          <img width='38' src={logo} alt='Pizza logo' />
+          <NavLink to={'/'}> <img width='38' src={logo} alt='Pizza logo' /></NavLink>
           <div>
             <h1>Lucky Pizza</h1>
             <p>самая вкусная пицца во вселенной</p>
           </div>
         </div>
-        <div class='header__cart'>
-          <a href={'/cart.html'} className='button--cart'>
-            <Button className={'button--cart'} onClick={onClickBasketBt}>
+        { location.pathname === '/' && <div class='header__cart'>
+          <NavLink to={'/basket'} className='button--cart'>
+            <Button className={'button--cart'}>
               <span>520 ₽</span>
               <div className='button__delimiter'/>
               <svg
@@ -50,10 +53,10 @@ import Button from "./Button";
               </svg>
               <span>3</span>
             </Button>
-
-          </a>
+          </NavLink>
+        </div>}
         </div>
-      </div>
+
     </div>
   )
 }

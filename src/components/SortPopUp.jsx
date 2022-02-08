@@ -21,8 +21,6 @@ const SortPopUp = ({items}) => {
         document.body.addEventListener("click", clickOutsideSort)
     }, [])
 
-    console.log(visiblePopUp)
-
     return (
         <div ref={refSortPopUp} class='sort' >
             <div class='sort__label' onClick={clickOnSort}>
