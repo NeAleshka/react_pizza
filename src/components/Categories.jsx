@@ -1,8 +1,37 @@
-import React from 'react';
+import React,{useState} from 'react';
+
+//functional component
+const Categories = ({items,onClickItem}) => {
+   const [activeItem,setActiveItem]=useState(null)
+
+    const selectItemHandler = (index) => {
+        setActiveItem(index)
+        onClickItem(index)
+    }
+
+
+    return (
+        <div className='categories'>
+            <ul>
+                <li
+                    className={activeItem===null?'active':''}
+                    onClick={()=>selectItemHandler(null)}>Все</li>
+                {
+                    items.map((item,index)=><li
+                        className={activeItem===index?'active':''}
+                        onClick={()=>selectItemHandler(index)}
+                        key={`${item}__${index}`}>{item}</li>)
+                }
+            </ul>
+        </div>
+    );
+};
+
+export default Categories;
 
 
 //class component
-class Categories extends React.Component {
+/*class Categories extends React.Component {
     state = {
         activeItem: 0
     }
@@ -27,23 +56,4 @@ class Categories extends React.Component {
             </div>
         )
     }
-}
-
-//functional component
-/*const Categories = ({items}) => {
-   const [activeItem,setActiveItem]=useState('Все')
-    return (
-        <div className='categories'>
-            <ul>
-                {
-                    items.map((item,index)=><li
-                        className={activeItem===item?'active':''}
-                        onClick={()=>setActiveItem(item)}
-                        key={`${item}__${index}`}>{item}</li>)
-                }
-            </ul>
-        </div>
-    );
-};*/
-
-export default Categories;
+}*/
