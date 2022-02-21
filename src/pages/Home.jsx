@@ -1,32 +1,30 @@
 import React from 'react';
 import PizzaCard from "../components/PizzaCard";
 import {Categories, SortPopUp} from "../components";
-import {useDispatch, useSelector} from "react-redux";
-import {filterAC} from "../redux/reducers/filterReducer";
+import {useSelector} from "react-redux";
 
 
 const Home = () => {
 
-    const pizzas=useSelector( ({setPizzas})=> setPizzas.items)
-    const dispatch=useDispatch()
-    const setCategory=index=>{
-        dispatch(filterAC(index))
-    }
+    const pizzas=useSelector( ({setPizzas})=> {
+        return{
+            items:setPizzas.items,
+        }
+    })
 
     return (
         <div className='content'>
             <div className='container'>
                 <div className='content__top'>
                     <Categories
-                        items={['Мясные', 'Вегетарианские', 'Гриль', 'Острые', 'Закрытые',]}
-                        onClickItem={setCategory}
+                        items={['Все', 'Мясные', 'Вегетарианские', 'Гриль', 'Острые', 'Закрытые',]}
                     />
                     <SortPopUp items={["популярности", "цене", "алфавиту",]}/>
                 </div>
                 <h2 className='content__title'>Все пиццы</h2>
                 <div className='content__items'>
                     {
-                        pizzas.map((item,index)=>{
+                        pizzas.items.map((item,index)=>{
                             return <PizzaCard
                                 key={`${item}__${index}`}
                                 {...item}

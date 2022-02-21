@@ -1,25 +1,16 @@
 import React,{useState} from 'react';
 
 //functional component
-const Categories = ({items,onClickItem}) => {
-   const [activeItem,setActiveItem]=useState(null)
-
-    const selectItemHandler = (index) => {
-        setActiveItem(index)
-        onClickItem(index)
-    }
-
+const Categories = ({items}) => {
+   const [activeItem,setActiveItem]=useState(0)
 
     return (
         <div className='categories'>
             <ul>
-                <li
-                    className={activeItem===null?'active':''}
-                    onClick={()=>selectItemHandler(null)}>Все</li>
                 {
                     items.map((item,index)=><li
                         className={activeItem===index?'active':''}
-                        onClick={()=>selectItemHandler(index)}
+                        onClick={()=>setActiveItem(index)}
                         key={`${item}__${index}`}>{item}</li>)
                 }
             </ul>
