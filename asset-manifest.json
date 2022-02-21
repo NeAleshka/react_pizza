@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react_pizza/static/css/main.f481d030.css",
-    "main.js": "/react_pizza/static/js/main.67c576fe.js",
+    "main.js": "/react_pizza/static/js/main.d0c5599c.js",
     "static/media/ProximaNova-Regular.eot": "/react_pizza/static/media/ProximaNova-Regular.d97f8f32c098b28c3ab0.eot",
     "static/media/ProximaNova-Regular.ttf": "/react_pizza/static/media/ProximaNova-Regular.b078618b41b9b6629ea0.ttf",
     "static/media/ProximaNova-Bold.eot": "/react_pizza/static/media/ProximaNova-Bold.787088b281e017f8c449.eot",
@@ -17,10 +17,10 @@
     "static/media/pizza-logo.svg": "/react_pizza/static/media/pizza-logo.56ac87032d8f6fdf863326acd06c0d97.svg",
     "index.html": "/react_pizza/index.html",
     "main.f481d030.css.map": "/react_pizza/static/css/main.f481d030.css.map",
-    "main.67c576fe.js.map": "/react_pizza/static/js/main.67c576fe.js.map"
+    "main.d0c5599c.js.map": "/react_pizza/static/js/main.d0c5599c.js.map"
   },
   "entrypoints": [
     "static/css/main.f481d030.css",
-    "static/js/main.67c576fe.js"
+    "static/js/main.d0c5599c.js"
   ]
 }
