@@ -10,7 +10,7 @@ import {setPizzasAC} from "./redux/reducers/setPizzasReducer";
 function App() {
     const dispatch=useDispatch()
     useEffect(()=>{
-        axios.get('http://localhost:3000/db.json').then(({data: {pizzas: pizzasItems}})=>{
+        axios.get('db.json').then(({data: {pizzas: pizzasItems}})=>{
             console.log()
             dispatch (setPizzasAC((pizzasItems)))
         })
